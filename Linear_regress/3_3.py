@@ -76,7 +76,7 @@ init.constant_(net[0].bias, val=0)  # 也可以直接修改bias的data: net[0].b
 
 
 
-# 定义损失函数
+# 定义损失函
 loss = nn.MSELoss()
 
 # 定义优化算法
