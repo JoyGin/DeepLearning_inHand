@@ -13,6 +13,7 @@ labels = true_w[0] * features[:, 0] + true_w[1] * features[:, 1] + true_b
 labels += torch.tensor(np.random.normal(0, 0.01, size=labels.size()),
                        dtype=torch.float32)
 
+# print(features[0], labels[0])
 
 
 def set_figsize(figsize=(3.5, 2.5)):

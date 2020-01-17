@@ -100,16 +100,16 @@ for param_group in optimizer.param_groups:
     param_group['lr'] *= 0.1 # 学习率为之前的0.1倍
 
 # 训练模型
-num_epochs = 100
+num_epochs = 4
 for epoch in range(1, num_epochs + 1):
     for X, y in data_iter:
         output = net(X)
         l = loss(output, y.view(-1, 1))
         # print(l)
-        optimizer.zero_grad() # 梯度清零，等价于net.zero_grad()
         # print(optimizer)
         l.backward()
         optimizer.step()
+        optimizer.zero_grad()  # 梯度清零，等价于net.zero_grad()
     print('epoch %d, loss: %f' % (epoch, l.item()))
 
 
