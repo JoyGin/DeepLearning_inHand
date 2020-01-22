@@ -1,7 +1,6 @@
 import torch
 from torch import nn
 from torch.nn import init
-import numpy as np
 import sys
 sys.path.append("..")
 import d2lzh_pytorch as d2l
@@ -16,9 +15,11 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 num_inputs = 784
 num_outputs = 10
 
+
 class FlattenLayer(nn.Module):
     def __init__(self):
         super(FlattenLayer, self).__init__()
+
     def forward(self, x): # x shape: (batch, *, *, ...)
         return x.view(x.shape[0], -1)
 
