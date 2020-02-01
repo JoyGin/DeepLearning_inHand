@@ -123,7 +123,7 @@ def train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size,
         for X, y in train_iter:
             y_hat = net(X)
             l = loss(y_hat, y).sum()
-            
+
             # 梯度清零
             if optimizer is not None:
                 optimizer.zero_grad()
@@ -136,7 +136,7 @@ def train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size,
                 sgd(params, lr, batch_size)
             else:
                 optimizer.step()  # “softmax回归的简洁实现”一节将用到
-            
+
             
             train_l_sum += l.item()
             train_acc_sum += (y_hat.argmax(dim=1) == y).sum().item()
