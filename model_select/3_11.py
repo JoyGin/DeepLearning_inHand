@@ -13,6 +13,7 @@ labels = (true_w[0] * poly_features[:, 0] + true_w[1] * poly_features[:, 1]
           + true_w[2] * poly_features[:, 2] + true_b)
 labels += torch.tensor(np.random.normal(0, 0.01, size=labels.size()), dtype=torch.float)
 
+
 # 定义、训练、测试模型
 # 本函数已保存在d2lzh_pytorch包中方便以后使用
 def semilogy(x_vals, y_vals, x_label, y_label, x2_vals=None, y2_vals=None,
