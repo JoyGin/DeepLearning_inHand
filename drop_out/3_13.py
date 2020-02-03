@@ -72,9 +72,9 @@ train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 
 print('手动实现:')
 d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, params, lr)
-print('准确率:' + str(evaluate_accuracy(test_iter, net)))
 
 # 简洁实现
+# 定义模型函数
 net = nn.Sequential(
         d2l.FlattenLayer(),
         nn.Linear(num_inputs, num_hiddens1),
@@ -94,4 +94,4 @@ optimizer = torch.optim.SGD(net.parameters(), lr=0.5)
 
 print('简洁实现:')
 d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, None, optimizer)
-print('准确率:' + str(evaluate_accuracy(test_iter, net)))
+
