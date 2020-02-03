@@ -70,7 +70,9 @@ num_epochs, lr, batch_size = 5, 100.0, 256
 loss = torch.nn.CrossEntropyLoss()
 train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
 
-# d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, params, lr)
+print('手动实现:')
+d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, params, lr)
+print('准确率:' + str(evaluate_accuracy(test_iter, net)))
 
 # 简洁实现
 net = nn.Sequential(
@@ -87,6 +89,9 @@ net = nn.Sequential(
 for param in net.parameters():
     nn.init.normal_(param, mean=0, std=0.01)
 
+# 确定损失函数
 optimizer = torch.optim.SGD(net.parameters(), lr=0.5)
+
+print('简洁实现:')
 d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, None, optimizer)
-print(evaluate_accuracy(test_iter, net))
+print('准确率:' + str(evaluate_accuracy(test_iter, net)))
