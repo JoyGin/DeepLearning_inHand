@@ -13,4 +13,7 @@
 - MLP：存放第三章多层感知机的代码
 - model_select：第三章中模型选择、过拟合、欠拟合中的代码
 - softmax：第三章中softmax的代码
+- torch_tensor:存放测试pytorch的代码
+- weight_decay:存放丢弃法的代码
+- Kaggle：存放Kaggle比赛的代码，以及比赛用到的数据集
 
