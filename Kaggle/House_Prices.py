@@ -135,17 +135,18 @@ def k_fold(k, X_train, y_train, num_epochs,
 
 # 模型选择
 k, num_epochs, lr, weight_decay, batch_size = 10, 100, 5, 0, 64
-train_l, valid_l = k_fold(k, train_features, train_labels, num_epochs, lr, weight_decay, batch_size)
-print('%d-fold validation: avg train rmse %f, avg valid rmse %f' % (k, train_l, valid_l))
+# train_l, valid_l = k_fold(k, train_features, train_labels, num_epochs, lr, weight_decay, batch_size)
+# print('%d-fold validation: avg train rmse %f, avg valid rmse %f' % (k, train_l, valid_l))
 
 
-# 用于再kaggle提交数据
+# 用于在kaggle提交数据
 def train_and_pred(train_features, test_features, train_labels, test_data,
                    num_epochs, lr, weight_decay, batch_size):
     net = get_net(train_features.shape[1])
     train_ls, _ = train(net, train_features, train_labels, None, None,
                         num_epochs, lr, weight_decay, batch_size)
     d2l.semilogy(range(1, num_epochs + 1), train_ls, 'epochs', 'rmse')
+    # d2l.plt.show()
     print('train rmse %f' % train_ls[-1])
     preds = net(test_features).detach().numpy()
     test_data['SalePrice'] = pd.Series(preds.reshape(1, -1)[0])
