@@ -58,7 +58,8 @@ def get_net(feature_num):
         nn.Linear(num_inputs, num_hiddens1),
         nn.ReLU(),
         nn.Linear(num_hiddens2, num_outputs)
-    )'''
+    )
+    '''
     for param in net.parameters():
         nn.init.normal_(param, mean=0, std=0.01)
     return net
@@ -127,12 +128,13 @@ def k_fold(k, X_train, y_train, num_epochs,
             d2l.semilogy(range(1, num_epochs + 1), train_ls, 'epochs', 'rmse',
                          range(1, num_epochs + 1), valid_ls,
                          ['train', 'valid'])
+            # d2l.plt.show()
         print('fold %d, train rmse %f, valid rmse %f' % (i, train_ls[-1], valid_ls[-1]))
     return train_l_sum / k, valid_l_sum / k
 
 
 # 模型选择
-k, num_epochs, lr, weight_decay, batch_size = 10, 100, 5, 3, 64
+k, num_epochs, lr, weight_decay, batch_size = 10, 100, 5, 0, 64
 train_l, valid_l = k_fold(k, train_features, train_labels, num_epochs, lr, weight_decay, batch_size)
 print('%d-fold validation: avg train rmse %f, avg valid rmse %f' % (k, train_l, valid_l))
 
