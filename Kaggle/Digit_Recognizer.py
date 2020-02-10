@@ -44,7 +44,7 @@ def MNshow():
         plt.title(str(train_labels[i]))
     plt.show()
 
-MNshow()
+# MNshow()
 
 # 利用pytrch构建dataloader
 train_images = torch.from_numpy(train_images)
@@ -118,8 +118,9 @@ def train():
             optim.step()
 
             epoc_train_loss += loss.data
-            outputs = torch.max(outputs.data, 1)[1]
-            epoc_train_corr += torch.sum(outputs == labels.data)
+            epoc_train_corr += (outputs.argmax(dim=1) == labels).sum().cpu().item()
+            # outputs = torch.max(outputs.data, 1)[1]
+            # epoc_train_corr += torch.sum(outputs == labels.data)
 
         with torch.no_grad():
             for data in valid_loader:
@@ -130,9 +131,10 @@ def train():
                 labels = labels.to(device)
 
                 outputs = model(images)
-                outputs = torch.max(outputs.data, 1)[1]
+                # outputs = torch.max(outputs.data, 1)[1]
 
-                epoc_valid_corr += torch.sum(outputs == labels.data)
+                # epoc_valid_corr += torch.sum(outputs == labels.data)
+                epoc_valid_corr += (outputs.argmax(dim=1) == labels).sum().cpu().item()
 
         print(
             "loss is :{:.4f},Train Accuracy is:{:.4f}%,Test Accuracy is:{:.4f}".format(epoc_train_loss / len(train_dataset),
