@@ -29,6 +29,11 @@ train_images, valid_images, train_labels, valid_labels =train_test_split(train_i
                                                                          train_labels,
                                                                          test_size = 0.2,
                                              random_state = 42)
+
+train_images.resize(33600,224,224)
+valid_images.resize(8400,224,224)
+# print(train_images.shape)
+# print(valid_images.shape)
 '''
 train_images = Image.fromarray(train_images)   #这里ndarray_image为原来的numpy数组类型的输入
 
@@ -47,7 +52,6 @@ train_images = transform(train_images)
 train_images = np.array(train_images)
 # valid_images = np.array(valid_images)
 print(train_images.shape)
-'''
 # 使用AlexNet
 resize = 0
 trans = []
@@ -72,6 +76,8 @@ if resize:
         valid_image = np.array(valid_image)
         valid_imagesC[i] = valid_image
     valid_images = valid_imagesC
+'''
+
 # 可视化数据
 def MNshow():
     # visual
@@ -79,12 +85,12 @@ def MNshow():
     plt.figure()
     for i in range(1, 32):
         plt.subplot(4,8,i)
-        plt.imshow(train_images[i].reshape(28, 28))
+        plt.imshow(train_images[i].reshape(224, 224))
         plt.axis("off")
         plt.title(str(train_labels[i]))
     plt.show()
 
-# MNshow()
+MNshow()
 
 # 利用pytrch构建dataloader
 train_images = torch.from_numpy(train_images)
