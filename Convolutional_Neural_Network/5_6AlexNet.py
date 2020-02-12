@@ -1,5 +1,13 @@
+import time
 import torch
-import torch.nn as nn
+from torch import nn
+import torchvision
+
+import sys
+sys.path.append("..")
+import d2lzh_pytorch as d2l
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+# device = torch.device('cpu')
 
 
 class AlexNet(nn.Module):
@@ -34,3 +42,14 @@ class AlexNet(nn.Module):
         features = self.conv(img)
         output = self.fc(features.view(img.shape[0], -1))
         return output
+
+net = AlexNet()
+
+batch_size = 16
+# 如出现“out of memory”的报错信息，可减小batch_size或resize,用dataload加载数据需要判断是否为windows系统
+train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size, resize=224)
+
+# 训练
+lr, num_epochs = 0.001, 5
+optimizer = torch.optim.Adam(net.parameters(), lr=lr)
+d2l.train_ch5(net, train_iter, test_iter, batch_size, optimizer, device, num_epochs)
