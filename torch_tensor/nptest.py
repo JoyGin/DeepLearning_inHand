@@ -4,10 +4,15 @@ import torchvision
 import torch
 
 X = torch.tensor([
-    [5,2,3,4],
-    [5,6,9,8]
+    [[[5,2,3,4],
+    [5,6,9,8]]]
 ])
-print(X.argmax(dim=1))
+X2 = torch.tensor([
+    [[[5,2,3,4],
+    [5,6,9,8]]],
+
+])
+print(torch.cat((X,X2),dim=1).shape)
 '''
 X = np.random.rand(2,28,28)
 Y = np.empty(shape=[2,32,32])
