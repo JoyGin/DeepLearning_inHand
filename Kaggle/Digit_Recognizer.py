@@ -30,10 +30,7 @@ train_images, valid_images, train_labels, valid_labels =train_test_split(train_i
                                                                          test_size = 0.2,
                                              random_state = 42)
 
-train_images.resize(33600,224,224)
-valid_images.resize(8400,224,224)
-# print(train_images.shape)
-# print(valid_images.shape)
+
 '''
 train_images = Image.fromarray(train_images)   #这里ndarray_image为原来的numpy数组类型的输入
 
@@ -52,14 +49,15 @@ train_images = transform(train_images)
 train_images = np.array(train_images)
 # valid_images = np.array(valid_images)
 print(train_images.shape)
+'''
 # 使用AlexNet
-resize = 0
+resize = 224
 trans = []
 if resize:
     trans.append(torchvision.transforms.Resize(size=resize))
     transform = torchvision.transforms.Compose(trans)
-    train_imagesC = np.empty(shape = [336,224,224])
-    valid_imagesC = np.empty(shape = [84,224,224])
+    train_imagesC = np.empty(shape = [32,224,224])
+    valid_imagesC = np.empty(shape = [1,224,224])
     for i in range(train_imagesC.shape[0]):
         train_image = train_images[i]
         train_image = train_image.reshape(28,28)
@@ -76,7 +74,7 @@ if resize:
         valid_image = np.array(valid_image)
         valid_imagesC[i] = valid_image
     valid_images = valid_imagesC
-'''
+
 
 # 可视化数据
 def MNshow():
@@ -85,7 +83,7 @@ def MNshow():
     plt.figure()
     for i in range(1, 32):
         plt.subplot(4,8,i)
-        plt.imshow(train_images[i].reshape(224, 224))
+        plt.imshow(train_images[i])
         plt.axis("off")
         plt.title(str(train_labels[i]))
     plt.show()
