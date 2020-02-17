@@ -90,6 +90,90 @@ def predict_rnn(prefix, num_chars, rnn, params, init_rnn_state,
             output.append(int(Y[0].argmax(dim=1).item()))
     return ''.join([idx_to_char[i] for i in output])
 
-params = get_params()
-print(predict_rnn('分开', 10, rnn, params, init_rnn_state, num_hiddens, vocab_size,
-            device, idx_to_char, char_to_idx))
+# params = get_params()
+# print(predict_rnn('分开', 10, rnn, params, init_rnn_state, num_hiddens, vocab_size,
+#            device, idx_to_char, char_to_idx))
+
+
+# 裁剪梯度
+def grad_clipping(params, theta, device):
+    norm = torch.tensor([0.0], device=device)
+    for param in params:
+        norm += (param.grad.data ** 2).sum()
+    norm = norm.sqrt().item()
+    if norm > theta:
+        for param in params:
+            param.grad.data *= (theta / norm)
+
+
+# 定义模型训练函数
+def train_and_predict_rnn(rnn, get_params, init_rnn_state, num_hiddens,
+                          vocab_size, device, corpus_indices, idx_to_char,
+                          char_to_idx, is_random_iter, num_epochs, num_steps,
+                          lr, clipping_theta, batch_size, pred_period,
+                          pred_len, prefixes):
+    if is_random_iter:
+        # 随机采样
+        data_iter_fn = d2l.data_iter_random
+    else:
+        # 相邻采样
+        data_iter_fn = d2l.data_iter_consecutive
+    params = get_params()
+    loss = nn.CrossEntropyLoss()
+
+    for epoch in range(num_epochs):
+        if not is_random_iter:  # 如使用相邻采样，在epoch开始时初始化隐藏状态
+            state = init_rnn_state(batch_size, num_hiddens, device)
+        l_sum, n, start = 0.0, 0, time.time()
+        data_iter = data_iter_fn(corpus_indices, batch_size, num_steps, device)
+        for X, Y in data_iter:
+            if is_random_iter:  # 如使用随机采样，在每个小批量更新前初始化隐藏状态
+                state = init_rnn_state(batch_size, num_hiddens, device)
+            else:
+            # 否则需要使用detach函数从计算图分离隐藏状态, 这是为了
+            # 使模型参数的梯度计算只依赖一次迭代读取的小批量序列(防止梯度计算开销太大)
+                for s in state:
+                    s.detach_()
+
+            inputs = to_onehot(X, vocab_size)
+            # outputs有num_steps个形状为(batch_size, vocab_size)的矩阵
+            (outputs, state) = rnn(inputs, state, params)
+            # 拼接之后形状为(num_steps * batch_size, vocab_size)
+            outputs = torch.cat(outputs, dim=0)
+            # Y的形状是(batch_size, num_steps)，转置后再变成长度为
+            # batch * num_steps 的向量，这样跟输出的行一一对应
+            y = torch.transpose(Y, 0, 1).contiguous().view(-1)
+            # 使用交叉熵损失计算平均分类误差
+            # print('y:\n',y.shape)
+            # print('outputs:\n',outputs.shape)
+            l = loss(outputs, y.long())
+
+            # 梯度清0
+            if params[0].grad is not None:
+                for param in params:
+                    param.grad.data.zero_()
+            l.backward()
+            grad_clipping(params, clipping_theta, device)  # 裁剪梯度
+            d2l.sgd(params, lr, 1)  # 因为误差已经取过均值，梯度不用再做平均
+            l_sum += l.item() * y.shape[0]
+            n += y.shape[0]
+
+        if (epoch + 1) % pred_period == 0:
+            print('epoch %d, perplexity %f, time %.2f sec' % (
+                epoch + 1, math.exp(l_sum / n), time.time() - start))
+            for prefix in prefixes:
+                print(' -', predict_rnn(prefix, pred_len, rnn, params, init_rnn_state,
+                    num_hiddens, vocab_size, device, idx_to_char, char_to_idx))
+
+
+# 训练模型并创作歌词
+# 首先，设置模型超参数。我们将根据前缀“分开”和“不分开”分别创作长度为50个字符
+# （不考虑前缀长度）的一段歌词。我们每过50个迭代周期便根据当前训练的模型创作一段歌词。
+num_epochs, num_steps, batch_size, lr, clipping_theta = 250, 35, 32, 1e2, 1e-2
+pred_period, pred_len, prefixes = 50, 50, ['分开', '不分开']
+
+train_and_predict_rnn(rnn, get_params, init_rnn_state, num_hiddens,
+                      vocab_size, device, corpus_indices, idx_to_char,
+                      char_to_idx, True, num_epochs, num_steps, lr,
+                      clipping_theta, batch_size, pred_period, pred_len,
+                      prefixes)
