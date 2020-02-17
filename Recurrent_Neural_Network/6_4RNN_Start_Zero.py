@@ -177,4 +177,3 @@ train_and_predict_rnn(rnn, get_params, init_rnn_state, num_hiddens,
                       char_to_idx, True, num_epochs, num_steps, lr,
                       clipping_theta, batch_size, pred_period, pred_len,
                       prefixes)
-# xiu
