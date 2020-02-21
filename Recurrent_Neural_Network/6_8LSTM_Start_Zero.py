@@ -67,6 +67,7 @@ def LSTM(inputs, state, params):
         C = F_t * C + I_t * C_t
         H = O_t * torch.tanh(C)
 
+        # Y:batch_size * output_nums
         Y = torch.matmul(H, W_hq) + b_q
 
         outputs.append(Y)
