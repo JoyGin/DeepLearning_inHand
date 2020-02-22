@@ -580,13 +580,13 @@ def show_trace_2d(f, results):
     plt.contour(x1, x2, f(x1, x2), colors='#1f77b4')
     plt.xlabel('x1')
     plt.ylabel('x2')
-
+    plt.show()
 
 
 
 # ######################################## 7.3 ###############################################
 def get_data_ch7():  
-    data = np.genfromtxt('../../data/airfoil_self_noise.dat', delimiter='\t')
+    data = np.genfromtxt('../Data/airfoil_self_noise.dat', delimiter='\t')
     data = (data - data.mean(axis=0)) / data.std(axis=0)
     return torch.tensor(data[:1500, :-1], dtype=torch.float32), \
         torch.tensor(data[:1500, -1], dtype=torch.float32) # 前1500个样本(每个样本5个特征)
@@ -627,6 +627,7 @@ def train_ch7(optimizer_fn, states, hyperparams, features, labels,
     plt.plot(np.linspace(0, num_epochs, len(ls)), ls)
     plt.xlabel('epoch')
     plt.ylabel('loss')
+    plt.show()
 
 # 本函数与原书不同的是这里第一个参数优化器函数而不是优化器的名字
 # 例如: optimizer_fn=torch.optim.SGD, optimizer_hyperparams={"lr": 0.05}
@@ -663,6 +664,7 @@ def train_pytorch_ch7(optimizer_fn, optimizer_hyperparams, features, labels,
     plt.plot(np.linspace(0, num_epochs, len(ls)), ls)
     plt.xlabel('epoch')
     plt.ylabel('loss')
+    plt.show()
 
 
 
