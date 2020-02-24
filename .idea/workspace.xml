@@ -2,151 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffde8b16-ee4c-4f9d-9628-f4942e7040e8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/book_cover.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/cat1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/catdog.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter01/1.1_koebel.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter02/2.1_jupyter.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.11_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.11_output2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.11_output3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.12_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.12_output2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.12_output3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.12_output4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.16_house_pricing.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.16_kaggle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.16_kaggle_submit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.16_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.16_output2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.16_output3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.2_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.5_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.6_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.8_relu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.8_relu_grad.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.8_sigmoid.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.8_sigmoid_grad.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.8_tanh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.8_tanh_grad.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter05/5.5_lenet.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter05/5.6_alexnet.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter06/6.5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.3_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.3_output2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.3_output3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.3_output4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.4_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.4_output2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.4_output3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.4_output4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.4_output5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.4_output6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.4_output7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.4_output8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.5_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.5_output2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.5_output3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.5_output4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.6_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.6_output2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.6_output3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.7_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.7_output2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.8_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.8_output2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.11_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.11_output2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.11_output3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.11_output4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.1_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.1_output10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.1_output2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.1_output3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.1_output4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.1_output5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.1_output6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.1_output7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.1_output8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.1_output9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.2_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.3_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.3_output2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.4_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.4_output2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.4_output3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.4_output4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.5_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.5_output2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.5_output3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.6_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.9_output1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.9_output2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/cover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/book-org.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.11_capacity_vs_error.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.13_dropout.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.14_forward.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.1_linreg.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.4_softmaxreg.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter03/3.8_mlp.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter05/5.11_residual-block.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter05/5.12_densenet.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter05/5.1_correlation.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter05/5.2_conv_pad.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter05/5.2_conv_stride.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter05/5.3_conv_1x1.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter05/5.3_conv_multi_in.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter05/5.4_pooling.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter05/5.8_nin.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter05/5.9_inception.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter06/6.10_birnn.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter06/6.2_rnn-train.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter06/6.2_rnn.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter06/6.6_rnn-bptt.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter06/6.7_gru_1.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter06/6.7_gru_2.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter06/6.7_gru_3.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter06/6.8_lstm_0.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter06/6.8_lstm_1.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter06/6.8_lstm_2.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter06/6.8_lstm_3.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter06/6.9_deep-rnn.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.1_output1.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.1_output2.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.1_output3.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.2_output1.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.2_output2.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.2_output3.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.2_output4.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter07/7.2_output5.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.11_neural-style.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.11_style-transfer.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.2_finetune.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.4_anchor-label.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.4_iou.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.8_fast-rcnn.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.8_faster-rcnn.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.8_mask-rcnn.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.8_r-cnn.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.8_roi.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter09/9.9_segmentation.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter10/10.10_beam_search.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter10/10.10_s2s_prob1.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter10/10.10_s2s_prob2.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter10/10.11_attention.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter10/10.1_cbow.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter10/10.1_skip-gram.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter10/10.2_hi-softmax.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter10/10.8_conv1d-2d.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter10/10.8_conv1d-channel.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter10/10.8_conv1d.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter10/10.8_textcnn.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Data/img/chapter10/10.9_seq2seq.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Machine_Vision/Bigger_Image.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Machine_Vision/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Kaggle/house_prices/submission.csv" afterPath="$PROJECT_DIR$/Kaggle/house_prices/submission.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -393,7 +249,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Convolutional_Neural_Network" />
+              <option name="myItemId" value="Datasets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CIFAR" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -714,9 +574,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2462203" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2462203" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28978622" sideWeight="0.37149027" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
