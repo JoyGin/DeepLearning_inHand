@@ -184,6 +184,7 @@ def xy_to_cxcy(xy):
                       xy[:, 2:] - xy[:, :2]], 1)  # w, h
 
 
+# 计算锚框的偏移量 掩码
 def MultiBoxTarget(anchor, label):
     """
     # 按照「9.4.1. 生成多个锚框」所讲的实现, anchor表示成归一化(xmin, ymin, xmax, ymax).
@@ -263,6 +264,7 @@ labels = MultiBoxTarget(anchors.unsqueeze(dim=0),
 anchors = torch.tensor([[0.1, 0.08, 0.52, 0.92], [0.08, 0.2, 0.56, 0.95],
                         [0.15, 0.3, 0.62, 0.91], [0.55, 0.2, 0.9, 0.88]])
 offset_preds = torch.tensor([0.0] * (4 * len(anchors)))
+# print(offset_preds)
 cls_probs = torch.tensor([[0., 0., 0., 0.,],  # 背景的预测概率
                           [0.9, 0.8, 0.7, 0.1],  # 狗的预测概率
                           [0.1, 0.2, 0.3, 0.9]])  # 猫的预测概率
@@ -310,6 +312,7 @@ def non_max_suppression(bb_info_list, nms_threshold = 0.5):
     return output
 
 
+# 返回经过'NMS'的锚框
 def MultiBoxDetection(cls_prob, loc_pred, anchor, nms_threshold = 0.5):
     """
     # 按照「9.4.1. 生成多个锚框」所讲的实现, anchor表示成归一化(xmin, ymin, xmax, ymax).
@@ -321,11 +324,13 @@ def MultiBoxDetection(cls_prob, loc_pred, anchor, nms_threshold = 0.5):
         nms_threshold: 非极大抑制中的阈值
     Returns:
         所有锚框的信息, shape: (bn, 锚框个数, 6)
+        类别、预测值、锚框位置
         每个锚框信息由[class_id, confidence, xmin, ymin, xmax, ymax]表示
         class_id=-1 表示背景或在非极大值抑制中被移除了
     """
     assert len(cls_prob.shape) == 3 and len(loc_pred.shape) == 2 and len(anchor.shape) == 3
     bn = cls_prob.shape[0]
+    # print(bn)
 
     def MultiBoxDetection_one(c_p, l_p, anc, nms_threshold = 0.5):
         """
@@ -345,6 +350,7 @@ def MultiBoxDetection(cls_prob, loc_pred, anchor, nms_threshold = 0.5):
         confidence = confidence.detach().cpu().numpy()
         class_id = class_id.detach().cpu().numpy()
 
+        # Pred_BB_Info = namedtuple("Pred_BB_Info", ["index", "class_id", "confidence", "xyxy"])
         pred_bb_info = [Pred_BB_Info(
                             index = i,
                             class_id = class_id[i] - 1,  # 正类label从0开始
@@ -352,7 +358,7 @@ def MultiBoxDetection(cls_prob, loc_pred, anchor, nms_threshold = 0.5):
                             xyxy=[*anc[i]])  # xyxy是个列表
                         for i in range(pred_bb_num)]
 
-        # 正类的index
+        # 正类的index，获得nms之后的索引
         obj_bb_idx = [bb.index for bb in non_max_suppression(pred_bb_info, nms_threshold)]
 
         output = []
@@ -364,14 +370,18 @@ def MultiBoxDetection(cls_prob, loc_pred, anchor, nms_threshold = 0.5):
             ])
 
         return torch.tensor(output)  # shape: (锚框个数, 6)
-
+    # bn = cls_prob.shape[0]
     batch_output = []
     for b in range(bn):
         batch_output.append(MultiBoxDetection_one(cls_prob[b], loc_pred[b], anchor[0], nms_threshold))
 
     return torch.stack(batch_output)
-
-
+"""
+cls_probs = torch.tensor([[0., 0., 0., 0.,],  # 背景的预测概率
+                          [0.9, 0.8, 0.7, 0.1],  # 狗的预测概率
+                          [0.1, 0.2, 0.3, 0.9]])  # 猫的预测概率
+                          每个锚框对于是狗或猫的概率
+"""
 output = MultiBoxDetection(
     cls_probs.unsqueeze(dim=0), offset_preds.unsqueeze(dim=0),
     anchors.unsqueeze(dim=0), nms_threshold=0.5)
@@ -381,5 +391,6 @@ for i in output[0].detach().cpu().numpy():
     if i[0] == -1:
         continue
     label = ('dog=', 'cat=')[int(i[0])] + str(i[1])
+    # print(label)
     show_bboxes(fig.axes, [torch.tensor(i[2:]) * bbox_scale], label)
 d2l.plt.show()
