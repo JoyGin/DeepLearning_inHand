@@ -13,6 +13,10 @@ assert os.path.exists(os.path.join(data_dir, "train"))
 
 
 # 读取数据集
+# 我们先定义一个数据集类PikachuDetDataset，数据集每个样本包含label和image，
+# 其中label是一个 m×5 的向量，即m个边界框，每个边界框由[class, x_min,y_min, x_max, y_max]表示，
+# 这里的皮卡丘数据集中每个图像只有一个边界框，因此m=1。
+# image是一个所有元素都位于[0.0, 1.0]的浮点tensor，代表图片数据。
 class PikachuDetDataset(torch.utils.data.Dataset):
     """皮卡丘检测数据集类"""
     def __init__(self, data_dir, part, image_size=(256, 256)):
