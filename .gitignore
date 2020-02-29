@@ -2949,3 +2949,9 @@ Datasets/hotdog/train/not-hotdog/996.png
 Datasets/hotdog/train/not-hotdog/997.png
 Datasets/hotdog/train/not-hotdog/998.png
 Datasets/hotdog/train/not-hotdog/999.png
+*.png
+Data/pikachu/val/label.json
+Data/pikachu/val.rec
+Data/pikachu/train/label.json
+Data/pikachu/train.rec
+Data/pikachu/train.idx
