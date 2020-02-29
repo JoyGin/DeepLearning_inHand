@@ -40,11 +40,12 @@ class PikachuDetDataset(torch.utils.data.Dataset):
         cls = self.label[image_path]["class"]
         label = np.array([cls] + self.label[image_path]["loc"],
                          dtype="float32")[None, :]
+        # print(label)
 
         PIL_img = Image.open(os.path.join(self.image_dir, image_path)
                             ).convert('RGB').resize(self.image_size)
         img = self.transform(PIL_img)
-
+        # print(torch.tensor(img).shape)
         sample = {
             "label": label, # shape: (1, 5) [class, xmin, ymin, xmax, ymax]
             "image": img    # shape: (3, *image_size)
@@ -59,7 +60,7 @@ def load_data_pikachu(batch_size, edge_size=256, data_dir = '../Data/pikachu'):
     image_size = (edge_size, edge_size)
     train_dataset = PikachuDetDataset(data_dir, 'train', image_size)
     val_dataset = PikachuDetDataset(data_dir, 'val', image_size)
-
+    # print(train_dataset)
 
     train_iter = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size,
                                              shuffle=True, num_workers=0)
