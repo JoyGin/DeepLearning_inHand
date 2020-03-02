@@ -255,7 +255,7 @@ def load_data_jay_lyrics():
 
 def load_data_pikachu(batch_size, edge_size=256):
     """Download the pikachu dataest and then load into memory."""
-    data_dir = '../data/pikachu'
+    data_dir = '../Data/pikachu'
     _download_pikachu(data_dir)
     train_iter = image.ImageDetIter(
         path_imgrec=os.path.join(data_dir, 'train.rec'),
