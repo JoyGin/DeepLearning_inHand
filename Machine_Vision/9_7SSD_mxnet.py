@@ -109,7 +109,7 @@ net.initialize(ctx=mx.gpu())
 # print('output class preds:', cls_preds.shape)
 # print('output bbox preds:', bbox_preds.shape)
 
-batch_size = 16
+batch_size = 20
 train_iter, _ = d2l.load_data_pikachu(batch_size)
 
 ctx, net = d2l.try_gpu(), TinySSD(num_classes=1)
@@ -137,7 +137,7 @@ def bbox_eval(bbox_preds, bbox_labels, bbox_masks):
     return ((bbox_labels - bbox_preds) * bbox_masks).abs().sum().asscalar()
 
 
-for epoch in range(20):
+for epoch in range(25):
     acc_sum, mae_sum, n, m = 0.0, 0.0, 0, 0
     train_iter.reset()  # 从头读取数据
     start = time.time()
