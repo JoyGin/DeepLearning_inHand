@@ -1067,7 +1067,7 @@ class PikachuDetDataset(torch.utils.data.Dataset):
         
         return sample
 
-def load_data_pikachu(batch_size, edge_size=256, data_dir = '../../data/pikachu'):  
+def load_data_pikachu(batch_size, edge_size=256, data_dir = '../Data/pikachu'):
     """edge_size：输出图像的宽和高"""
     image_size = (edge_size, edge_size)
     train_dataset = PikachuDetDataset(data_dir, 'train', image_size)
@@ -1083,7 +1083,7 @@ def load_data_pikachu(batch_size, edge_size=256, data_dir = '../../data/pikachu'
 
 
 # ################################# 9.9 #########################
-def read_voc_images(root="../../data/VOCdevkit/VOC2012", 
+def read_voc_images(root="../Data/VOCdevkit/VOC2012",
                     is_train=True, max_num=None):
     txt_fname = '%s/ImageSets/Segmentation/%s' % (
         root, 'train.txt' if is_train else 'val.txt')
