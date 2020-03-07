@@ -135,7 +135,7 @@ def _download_pikachu(data_dir):
         gutils.download(root_url + k, os.path.join(data_dir, k), sha1_hash=v)
 
 
-def download_voc_pascal(data_dir='../data'):
+def download_voc_pascal(data_dir='../Data'):
     """Download the Pascal VOC2012 Dataset."""
     voc_dir = os.path.join(data_dir, 'VOCdevkit/VOC2012')
     url = ('http://host.robots.ox.ac.uk/pascal/VOC/voc2012'
@@ -364,7 +364,7 @@ def read_imdb(folder='train'):
     return data
 
 
-def read_voc_images(root='../data/VOCdevkit/VOC2012', is_train=True):
+def read_voc_images(root='../Data/VOCdevkit/VOC2012', is_train=True):
     """Read VOC images."""
     txt_fname = '%s/ImageSets/Segmentation/%s' % (
         root, 'train.txt' if is_train else 'val.txt')
