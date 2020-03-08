@@ -13,9 +13,9 @@ d2l.plt.imshow(content_img);
 # d2l.plt.show()
 
 d2l.set_figsize()
-style_img = Image.open('../data/autumn_oak.jpg')
+style_img = Image.open('../data/Class2.jpg')
 d2l.plt.imshow(style_img);
-# d2l.plt.show()
+d2l.plt.show()
 
 rgb_mean = np.array([0.485, 0.456, 0.406])
 rgb_std = np.array([0.229, 0.224, 0.225])
