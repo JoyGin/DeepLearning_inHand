@@ -1,7 +1,7 @@
 # DeepLearning_inhand
 - 存放动手学深度学习的代码
 - 书籍链接地址：<https://tangshusen.me/Dive-into-DL-PyTorch/>
-- 启动本地书籍: docsify serve D:\c\sg\DeepLearning\Dive-into-DL-PyTorch\docs
+- 启动本地书籍: docsify serve D:\Container_Everything\sg\DeepLearning\Dive-into-DL-PyTorch\docs
 - nodejs下载:<https://nodejs.org/zh-cn/>
 
 ## 文件夹存放的内容
